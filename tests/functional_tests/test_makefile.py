@@ -10,6 +10,14 @@ Tests:
 Cleanup/Teardown:
     5. Remove virtual environment
     6. Remove generated project
+
+generate project
+Linting the project
+    generate project test: assert project files exist
+    linting test: run make lint-ci and assert it passes
+    tests test: run make test and assert it passes
+        install dependencies
+        build wheel and execute tests against wheel
 """
 
 import subprocess
