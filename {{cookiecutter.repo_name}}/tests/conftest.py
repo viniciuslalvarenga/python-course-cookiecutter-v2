@@ -1,5 +1,6 @@
 """
 Este e um arquivo de configuracao do pytest para testes.
+
 Sempre que um arquivo chamado conftest.py e encontrado em um diretorio de testes,
 o pytest o utiliza para configurar fixtures e hooks que serao aplicados aos testes.
 """

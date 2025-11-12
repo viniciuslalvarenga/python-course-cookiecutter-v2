@@ -1,6 +1,4 @@
-"""
-Constantes
-"""
+"""Constantes usadas nos testes."""
 
 from pathlib import Path
 

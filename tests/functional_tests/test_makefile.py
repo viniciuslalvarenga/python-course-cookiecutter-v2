@@ -1,4 +1,7 @@
 """
+Test Makefile Functionality.
+
+Workflow:
 Setup
     1. Generate project using cookiecutter
     2. Create a virtual environment and install project dependencies(to all tests, could separete it)
@@ -25,11 +28,15 @@ from pathlib import Path
 
 
 def test_linting_passes(project_dir: Path):
+    """Test that linting passes without errors."""
     subprocess.run(["make", "lint-ci"], cwd=project_dir, check=True)
 
 
 def test_tests_pass(project_dir: Path):
     """
+    Test that all tests pass.
+
+    Workflow:
     1. Generate project
     2. Install test dependencies
     3. execute tests
