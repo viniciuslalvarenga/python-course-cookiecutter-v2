@@ -43,7 +43,11 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: 3.8
-      - name: Lint, Format, and other static code quality checks
+      - name: Congigure git CLI
+        run: |
+          git config --global user.name "Vinicius Lopes Alvarenga"
+          git config --global user.email "viniciusl.alvarenga@notme.com"
+      - name: Run tests
         run: |
           make install
           make test
