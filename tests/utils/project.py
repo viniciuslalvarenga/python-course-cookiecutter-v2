@@ -22,7 +22,7 @@ def initialize_git_repo(repo_dir: Path):
     subprocess.run(["git", "branch", "-m", "main"], cwd=repo_dir, check=True)
 
 
-def generate_project(template_value: Dict[str, str]):
+def generate_project(template_value: Dict[str, str], test_session_id: str):
     """
     execute: cookiecutter <template directory> ...
     """
@@ -30,7 +30,7 @@ def generate_project(template_value: Dict[str, str]):
     template_values: Dict[str, str] = deepcopy(template_value)
 
     cookiecutter_config = {"default_context": template_values}
-    cookiecutter_config_fpath = PROJECT_DIR / "tests/cookiecutter_test_config.json"
+    cookiecutter_config_fpath = PROJECT_DIR / f"tests/cookiecutter_test_config_{test_session_id}.json"
     cookiecutter_config_fpath.write_text(json.dumps(cookiecutter_config))
 
     cmd = [
