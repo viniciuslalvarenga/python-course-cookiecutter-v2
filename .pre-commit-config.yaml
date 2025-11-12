@@ -60,7 +60,10 @@ repos:
           [
             --no-strict-optional,
             --ignore-missing-imports,
+            --explicit-package-bases,
             --config-file=./pyproject.toml,
+            --exclude,
+            '(^tests/conftest\.py$|^{{cookiecutter.repo_name}}/tests/conftest\.py$)',
           ]
 
   - repo: https://github.com/psf/black
