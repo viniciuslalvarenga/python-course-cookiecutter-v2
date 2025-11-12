@@ -37,7 +37,3 @@ def test_tests_pass(project_dir: Path):
     subprocess.run(["make", "install"], cwd=project_dir, check=True)
     # subprocess.run(["make", "test"], cwd=project_dir, check=True) referencia
     subprocess.run(["make", "test-wheel-locally"], cwd=project_dir, check=True)
-
-
-def test_install_succeeds():
-    pass
