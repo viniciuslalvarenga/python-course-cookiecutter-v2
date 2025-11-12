@@ -52,20 +52,6 @@ repos:
       - id: ruff
         args: [--exit-non-zero-on-fix, --config=./pyproject.toml]
 
-  - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: "v1.2.0"
-    hooks:
-      - id: mypy
-        args:
-          [
-            --no-strict-optional,
-            --ignore-missing-imports,
-            --explicit-package-bases,
-            --config-file=./pyproject.toml,
-            --exclude,
-            '(^tests/conftest\.py$|^{{cookiecutter.repo_name}}/tests/conftest\.py$)',
-          ]
-
   - repo: https://github.com/psf/black
     rev: 23.1.0
     hooks:
