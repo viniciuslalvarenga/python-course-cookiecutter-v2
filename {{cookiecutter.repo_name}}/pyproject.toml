@@ -22,7 +22,13 @@ dynamic = ["version"]
 test = ["pytest", "pytest-cov"]
 release = ["build", "twine"]
 static-code-qa = ["pre-commit"]
-dev = ["python-package[test,release,static-code-qa]"]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "build",
+    "twine",
+    "pre-commit",
+]
 
 # docs: https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#dynamic-metadata
 [tool.setuptools.dynamic]
