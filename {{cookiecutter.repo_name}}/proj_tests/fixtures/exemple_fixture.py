@@ -3,7 +3,6 @@
 from uuid import uuid4
 
 import pytest
-
 from proj_tests.consts import PROJECT_DIR
 
 
