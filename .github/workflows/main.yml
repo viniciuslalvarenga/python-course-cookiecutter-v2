@@ -1,4 +1,4 @@
-name: Build and Test
+name: Build, Test
 
 on:
   pull_request:
@@ -9,7 +9,6 @@ on:
   workflow_dispatch:
 
 jobs:
-
   check-version-txt:
     runs-on: ubuntu-latest
     steps:
@@ -43,10 +42,10 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: 3.8
-      - name: Congigure git CLI
+      - name: Configure git CLI
         run: |
-          git config --global user.name "Vinicius Lopes Alvarenga"
           git config --global user.email "viniciusl.alvarenga@notme.com"
+          git config --global user.name "viniciusl.alvarenga"
       - name: Run tests
         run: |
           make install
@@ -60,6 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
+      - uses: actions/checkout@v3
       - name: Push tags
         run: |
           git push origin --tags
@@ -70,18 +70,18 @@ jobs:
     steps:
       - name: Dump GitHub context
         id: github_context_step
-        run: echo '{%raw%}${{ toJSON(github) }}{%endraw%}'
+        run: echo '{% raw %}${{ toJSON(github) }}'{% endraw %}
       - name: Dump job context
-        run: echo '{%raw%}${{ toJSON(job) }}{%endraw%}'
+        run: echo '{% raw %}${{ toJSON(job) }}'{% endraw %}
       - name: Dump steps context
-        run: echo '{%raw%}${{ toJSON(steps) }}{%endraw%}'
+        run: echo '{% raw %}${{ toJSON(steps) }}'{% endraw %}
       - name: Dump runner context
-        run: echo '{%raw%}${{ toJSON(runner) }}{%endraw%}'
+        run: echo '{% raw %}${{ toJSON(runner) }}'{% endraw %}
       - name: Dump strategy context
-        run: echo '{%raw%}${{ toJSON(strategy) }}{%endraw%}'
+        run: echo '{% raw %}${{ toJSON(strategy) }}'{% endraw %}
       - name: Dump matrix context
-        run: echo '{%raw%}${{ toJSON(matrix) }}{%endraw%}'
+        run: echo '{% raw %}${{ toJSON(matrix) }}'{% endraw %}
       - name: Dump secrets
-        run: echo '{%raw%}${{ toJSON(secrets) }}{%endraw%}'
+        run: echo '{% raw %}${{ toJSON(secrets) }}'{% endraw %}
       - name: Dump vars
-        run: echo '{%raw%}${{ toJSON(vars) }}{%endraw%}'
+        run: echo '{% raw %}${{ toJSON(vars) }}'{% endraw %}
