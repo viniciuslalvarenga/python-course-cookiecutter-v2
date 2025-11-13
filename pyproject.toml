@@ -17,6 +17,10 @@ multi_line_output = "VERTICAL_HANGING_INDENT"
 force_grid_wrap = 2
 line_length = 119
 
+[tool.pytest.ini_options]
+testpaths = ["proj_tests", "tests"]
+pythonpath = ["{{cookiecutter.repo_name}}/src"]
+
 [tool.pylint."messages control"]
 disable = [
     "line-too-long",
