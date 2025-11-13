@@ -23,7 +23,7 @@
     ],
     "[python]": {
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true
+            "source.organizeImports": "explicit"
         },
         "editor.formatOnSave": true,
     },
@@ -34,11 +34,11 @@
     "editor.rulers": [
         {
             "column": 99,
-            "color": "white"
+            "color": "#FFFFFF"
         },
         {
             "column": 119,
-            "color": "lightgreen"
+            "color": "#90EE90"
         }
     ],
 }

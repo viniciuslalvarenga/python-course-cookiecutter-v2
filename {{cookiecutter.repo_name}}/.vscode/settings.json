@@ -1,6 +1,6 @@
 {
     "python.testing.pytestArgs": [
-        "tests"
+        "proj_tests"
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
@@ -23,9 +23,9 @@
     ],
     "[python]": {
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true
+            "source.organizeImports": "explicit"
         },
-        "editor.formatOnSave": true,
+        "editor.formatOnSave": true
     },
     "python.analysis.autoImportCompletions": true,
     "python.analysis.indexing": true,
@@ -34,11 +34,13 @@
     "editor.rulers": [
         {
             "column": 99,
-            "color": "white"
+            "color": "#FFFFFF"
+
         },
         {
             "column": 119,
-            "color": "lightgreen"
+            "color": "#90EE90"
+
         }
     ],
 }
